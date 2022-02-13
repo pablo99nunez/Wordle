@@ -1,0 +1,16 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: 3rem;
+    font-size: 1.125rem;
+    align-items: center;
+    border-bottom: 1px solid #00000022;
+}
+.Navbar img{
+    object-fit: cover;
+    cursor: pointer;
+}
+.Navbar h1{
+    cursor:pointer;
+}
