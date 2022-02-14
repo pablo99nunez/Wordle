@@ -1,0 +1,11 @@
+.howTo-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.example {
+  display: flex;
+  transform: scale(0.8);
+}

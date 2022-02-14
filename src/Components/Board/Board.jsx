@@ -6,9 +6,20 @@ export default function Board() {
   const [guess, setGuess] = useState("");
   const [result, setResult] = useState(Array(6).fill(Array(5).fill()));
   const [colors, setColors] = useState(Array(6).fill(Array(5).fill()));
-  const word = "APAGA";
+  const [word, setWord] = useState("");
+  const [wordForValidate, setwordForValidate] = useState(word);
   const [index, setIndex] = useState(0);
-
+  useEffect(
+    async () => [
+      fetch("http://localhost:3001/wordByDay")
+        .then((res) => res.json())
+        .then((data) => {
+          setWord(data.word.toUpperCase());
+          setwordForValidate(data.word.toUpperCase());
+        }),
+    ],
+    []
+  );
   useEffect(() => {
     setResult(
       result.map((e, y) => {
@@ -54,7 +65,7 @@ export default function Board() {
       else count = 0;
       if (count >= 5) {
         setTimeout(() => {
-          alert("GANASTE!");
+          return alert("GANASTE!");
         }, 1500);
       }
     });
